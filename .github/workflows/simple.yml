@@ -19,10 +19,11 @@ jobs:
         shell: python
   run-powershell-commands:
     runs-on: windows-latest
+    needs: ["run-shell-commands"]
     steps:
       - name: powershell directlry
         run: Get-Location
-      - name: Bash Doreectory
+      - name: Bash Directory
         run: pwd
         shell: bash
 
