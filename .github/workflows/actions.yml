@@ -2,12 +2,29 @@ name: Actions Workflow
 
 #on: [push, pull_request]
 on: 
-# push:
+  push:
+    branches: 
+      - master
+      - 'feature/*'      # matches feature/test but doesn't match feature/test/new
+      - 'feature/**'     # matches everything
+      - '!feature/featc' # it will specifically ignore the branch feature/featc
+#    branches-ignore:
+#      - master
 #  schedule:
 #    - cron: "* * * * *"
+    tags:
+      - v1.*
+#   tags-ignore:
+#     - v1.2
+    paths:
+      - '**.js'          # run the workflow only when a js file is pushed.
+#   paths-ignore:
+#     - 'docs/**'
   repository_dispatch: 
     types: [build]
   pull_request:
+  #  branches:
+  #    - master
     types: [closed, open, assigned, reopened]
 
 jobs:
