@@ -1,24 +1,31 @@
 name: Context
 
-on: push
+on: [push, pull_request]
 
 jobs:
   one:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
+    if: github.event_name == 'push' # the job will run oly if the event type is push 
     steps:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
+        continue-on-error: true
+        timeout-minutes: 360
       - name: Dump job context
+        if: failure()   # this step will be executed only if the previous step fails
         env:
           JOB_CONTEXT: ${{ toJSON(job) }}
         run: echo "$JOB_CONTEXT"
       - name: Dump steps context
+        if: success()    # this step will be executed only if the previous step succeeds
         env:
           STEPS_CONTEXT: ${{ toJSON(steps) }}
         run: echo "$STEPS_CONTEXT"
       - name: Dump runner context
+        if: always()     # this step will always runs
         env:
           RUNNER_CONTEXT: ${{ toJSON(runner) }}
         run: echo "$RUNNER_CONTEXT"
