@@ -4,7 +4,7 @@ on: push
 
 jobs:
   node-version:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Log node version
         run: node -v
