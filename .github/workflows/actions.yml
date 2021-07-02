@@ -10,7 +10,7 @@ on:
       - '!feature/featc' # it will specifically ignore the branch feature/featc
 #    branches-ignore:
 #      - master
-#  schedule: 
+#  schedule:
 #    - cron: "* * * * *"
     tags:
       - v1.* 
