@@ -13,7 +13,7 @@ on:
 #  schedule:
 #    - cron: "* * * * *"
     tags:
-      - v1.*
+      - v1.* 
 #   tags-ignore:
 #     - v1.2
     paths:
