@@ -2,17 +2,18 @@ name: Shell Commands
 
 #on: [push, pull_request]
 on: 
+  push:
 # push:
 #  schedule:
 #    - cron: "* * * * *"
 #  repository_dispatch: 
 #    types: [build]
   pull_request:
-    types: [closed, open, assigned, reopened]
+    types: [closed, opened, assigned, reopened]
 
 jobs:
   run-shell-commands:
-    runs-on: ubuntu-latest
+    runs-on: poc-custom-runner
     steps:
       - name: echo a string
         run: echo "Hello World"
@@ -34,5 +35,3 @@ jobs:
       - name: Bash Directory
         run: pwd
         shell: bash
-
-    

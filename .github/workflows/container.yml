@@ -3,7 +3,7 @@ on: push
 
 jobs:
   docker-steps:
-    runs-on: ubuntu-latest
+    runs-on: poc-custom-runner
     container: 
       image: node:10.18.0-jessie
     steps:

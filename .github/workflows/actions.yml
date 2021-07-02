@@ -25,11 +25,11 @@ on:
   pull_request:
   #  branches:
   #    - master
-    types: [closed, open, assigned, reopened]
+    types: [closed, opened, assigned, reopened]
 
 jobs:
   run-github-actions:
-    runs-on: ubuntu-latest
+    runs-on: poc-custom-runner
     steps:
       - name: payload
         run: echo ${{ github.event.client_payload.env }}
