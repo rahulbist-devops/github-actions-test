@@ -24,7 +24,7 @@ jobs:
           args: "yoyo"
         
   node-docker:
-    runs-on: ubuntu-latest
+    runs-on: poc-custom-runner
     container: 
       image: node:13.5.0-alpine3.10
     steps:
