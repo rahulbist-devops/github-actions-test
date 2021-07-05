@@ -12,7 +12,7 @@ on:
 #      - master
 #  schedule: 
 #    - cron: "* * * * *"
-    tags:
+    tags: 
       - v1.* 
 #   tags-ignore:
 #     - v1.2
