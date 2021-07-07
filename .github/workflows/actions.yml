@@ -29,7 +29,7 @@ on:
 
 jobs:
   run-github-actions:
-    runs-on: poc-custom-runner
+    runs-on: poc-custom-runner-eks
     steps:
       - name: payload
         run: echo ${{ github.event.client_payload.env }}

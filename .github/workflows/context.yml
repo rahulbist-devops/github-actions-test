@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   one:
-    runs-on: poc-custom-runner
+    runs-on: poc-custom-runner-eks
     timeout-minutes: 360
     if: github.event_name == 'push' # the job will run only if the event type is push 
     steps:

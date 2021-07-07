@@ -13,7 +13,7 @@ on:
 
 jobs:
   run-shell-commands:
-    runs-on: poc-custom-runner
+    runs-on: poc-custom-runner-eks
     steps:
       - name: echo a string
         run: echo "Hello World"
