@@ -14,7 +14,7 @@ on:
 #    - cron: "* * * * *"
     tags: 
       - v1.* 
-#   tags-ignore:
+#   tags-ignore: 
 #     - v1.2
     paths:
       - '**.js'          # run the workflow only when a js file is pushed.
