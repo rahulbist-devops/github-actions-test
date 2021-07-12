@@ -39,6 +39,10 @@ jobs:
         run: echo "$MATRIX_CONTEXT"
       - name: make file
         run: mkdir testfile.txt
+  two:
+    runs-on: poc-custom-runner-eks
+    if: github.event_name == 'push' # the job will run only if the event type is push 
+    steps:
       - name: List files after checkout
         run: |
           pwd
