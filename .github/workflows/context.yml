@@ -38,7 +38,7 @@ jobs:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
       - name: make file
-        run: mkdir testfile1.txt
+        run: mkdir testfile1.txt 
       - name: List files after checkout
         run: |
           pwd
