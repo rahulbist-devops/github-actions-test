@@ -37,8 +37,6 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-      - name: remove old files
-        run: rm *
       - name: make file
         run: mkdir testfile1.txt
       - name: List files after checkout
