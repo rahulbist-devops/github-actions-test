@@ -4,7 +4,8 @@ name: Actions Workflow
 on: 
   push:
     branches: 
-      - master
+      - master 
+      - new-branch
       - 'feature/*'      # matches feature/test but doesn't match feature/test/new
       - 'feature/**'     # matches everything
       - '!feature/featc' # it will specifically ignore the branch feature/featc
