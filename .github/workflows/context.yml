@@ -38,7 +38,7 @@ jobs:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
       - name: make file
-        run: mkdir testfile.txt
+        run: mkdir testfile1.txt
   two:
     runs-on: poc-custom-runner-eks
     if: github.event_name == 'push' # the job will run only if the event type is push 
