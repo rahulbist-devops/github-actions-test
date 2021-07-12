@@ -37,8 +37,8 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-      - name: Checkout
-        uses: actions/checkout@v1
+      - name: make file
+        run: mkdir testfile.txt
       - name: List files after checkout
         run: |
           pwd
