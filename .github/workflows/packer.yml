@@ -7,7 +7,7 @@ on:
 
 jobs:
   packer:
-    runs-on: poc-custom-runner-eks
+    runs-on: poc-custom-runner
     name: packer
 
     steps:
