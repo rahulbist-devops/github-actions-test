@@ -40,13 +40,14 @@
             "sudo apt-add-repository -y ppa:ansible/ansible",
             "sudo apt-get update",
             "sudo apt-get -y install ansible",
-            "pwd"
+            "pwd",
+            "echo ################################################"
         ],
         "inline_shebang": "/bin/sh -x"
       },
       {
         "type": "ansible-local",
-        "playbook_file": "/home/runner/work/github-actions-test/github-actions-test/gha-base-ami/ansible/playbook.yml"
+        "playbook_file": "../ansible/playbook.yml"
       }
     ]
   }
