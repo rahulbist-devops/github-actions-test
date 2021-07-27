@@ -3,7 +3,7 @@
 name: Packer GitHub Actions
 author: Kerim Satirli <kerim@operatehappy.com>
 description: Run Packer commands
-
+ 
 inputs:
   command:
     description: command to execute
