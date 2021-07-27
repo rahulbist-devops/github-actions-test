@@ -30,10 +30,10 @@ jobs:
 
       # build artifact
       - name: Build Artifact
-        uses: ../.github/actions/packer-github-actions
+        uses: ./.github/actions/packer-github-actions
         with:
           command: build
           arguments: "-color=false -on-error=abort"
-          target: ../gha-base-ami/packer/packer.json
+          target: ./gha-base-ami/packer/packer.json
         env:
           PACKER_LOG: 1
