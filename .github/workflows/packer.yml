@@ -9,7 +9,7 @@ jobs:
   packer:
     runs-on: poc-custom-runner
     name: packer
-
+ 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
