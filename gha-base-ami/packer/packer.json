@@ -7,7 +7,9 @@
     "builders": [
       {
         "type": "amazon-ebs",
-        "assume_role": "arn:aws:iam::864343291038:role/bep-custom-runner-ec2-role",
+        "assume_role": {
+          "role_arn"    :  "arn:aws:iam::864343291038:role/bep-custom-runner-ec2-role"
+        },
         "ami_name": "gha_custom_runner_Base_linux_ami_{{ timestamp }}",
         "ami_description": "Bain GitHub Actions Custom Runner Ubuntu Server 20.04 LTS (HVM),EBS General Purpose (SSD) Volume Type AMI",
         "region": "{{user `aws_region`}}",
