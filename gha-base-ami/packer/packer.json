@@ -10,9 +10,6 @@
     "builders": [
       {
         "type": "amazon-ebs",
-        "assume_role": {
-          "role_arn": "arn:aws:iam::864343291038:role/bep-custom-runner-ec2-role"
-        },
         "access_key": "{{user `aws_access_key`}}",
         "secret_key": "{{user `aws_secret_key`}}",
         "token": "{{user `aws_session_token`}}",
