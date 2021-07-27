@@ -33,7 +33,7 @@ jobs:
 
       # build artifact
       - name: Build Artifact
-        uses: /home/runner/work/github-actions-test/github-actions-test/.github/actions/packer-github-actions
+        uses: ./.github/actions/packer-github-actions
         with:
           command: build
           arguments: "-color=false -on-error=abort"
