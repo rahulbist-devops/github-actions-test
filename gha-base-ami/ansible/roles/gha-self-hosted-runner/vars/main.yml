@@ -1,0 +1,5 @@
+---
+RUNNER_BASEDIR: /opt/actions-runner
+RUNNER_BASEURL: https://github.com/actions/runner/releases/download
+RUNNER_VERSION: 2.273.2
+RUNNER_PACKAGE: actions-runner-linux-x64-2.273.2.tar.gz

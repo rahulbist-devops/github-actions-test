@@ -1,0 +1,49 @@
+{
+    "variables": {
+        "aws_region": "us-east-1",
+        "subnet_id": "subnet-fb8603d5",
+        "ami_owner_account": "099720109477"
+    },
+    "builders": [
+      {
+        "type": "amazon-ebs",
+        "ami_name": "gha_custom_runner_Base_linux_ami_{{ timestamp }}",
+        "ami_description": "Bain GitHub Actions Custom Runner Ubuntu Server 20.04 LTS (HVM),EBS General Purpose (SSD) Volume Type AMI",
+        "region": "{{user `aws_region`}}",
+        "instance_type": "t2.small",
+        "ssh_username": "ubuntu",
+        "ssh_timeout": "10m",
+        "ssh_pty": true,
+        "subnet_id": "{{user `subnet_id`}}",
+        "tags": {
+          "OS": "Ubuntu Server 20.04 LTS (HVM),EBS General Purpose (SSD) Volume Type",
+          "Build_version": "{{ timestamp }}"
+        },
+        "source_ami_filter": {
+          "filters": {
+          "virtualization-type": "hvm",
+          "name": "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*",       
+          "root-device-type": "ebs"
+          },
+          "owners": "{{user `ami_owner_account`}}",
+          "most_recent": true
+       }
+      }
+    ],
+    "provisioners": [
+      {
+        "type": "shell",
+        "inline": [
+            "sudo apt-add-repository -y ppa:ansible/ansible",
+            "sudo apt-get update",
+            "sudo apt-get -y install ansible"
+        ],
+        "inline_shebang": "/bin/sh -x"
+      },
+      {
+        "type": "ansible-local",
+        "playbook_dir": "../ansible",
+        "playbook_file": "../ansible/playbook.yml"
+      }
+    ]
+  }
