@@ -7,13 +7,11 @@
     "builders": [
       {
         "type": "amazon-ebs",
+        "assume_role": "arn:aws:iam::864343291038:role/bep-custom-runner-ec2-role",
         "ami_name": "gha_custom_runner_Base_linux_ami_{{ timestamp }}",
         "ami_description": "Bain GitHub Actions Custom Runner Ubuntu Server 20.04 LTS (HVM),EBS General Purpose (SSD) Volume Type AMI",
         "region": "{{user `aws_region`}}",
         "instance_type": "t2.small",
-        "access_key": "ASIA4SPW76SPPXCZRQHE",
-        "secret_key": "KsuVi0nTHAiWHjeI3nybjDHMlyHpb37H1KtV+6i6",
-        "token": "IQoJb3JpZ2luX2VjEFUaCXVzLWVhc3QtMSJIMEYCIQCCtzhEFtRScdeCKQtZ4bDKiTA0/hbq1FEz7kn2b/gNzgIhANKzaI4LYfvvSEjWd5h2rPsSGzQ6GNtfqHoyCg0PSjdIKpADCF0QABoMODY0MzQzMjkxMDM4IgzAWN98A6essSImEaQq7QI+dm1jIPorMCyftggiHxdgqZXbzNxpV2rQfO5mZ40nAUnFVY+4Bg4d0m7tr8TTxOMN+YvJeYuDeibPaa/EH6nNbNVe2YT5NVvmNfifx3RTgQK54qjXNqPEPOFANkRjvIs3q88/LvwGCVHE2J5YUJnC0Fx6bQDMF4q++i33+kMIHMpcI25Q299vJImEw807V6g3amNdpvwEuIBd7IOYWyeyCjxzTQW1/Bz5Q7LTwlkLMOWHR0V75SI2S3xT0qvyG2TBSCt0fjqzwkp9znDyahUgodOyN8znotnRcisR58997HJ86HbBaGaZ3l5BBOq0uxOEPR2B/oOont6WdW5UU8SUeMBrGKxP46g7gRlqvdASq/rV4YGYVameqTXr4DaLIa+EPbeP6zGhFUz98J4ZnBVIuy90mMbv2QQtaQ7x2kiHMaJt9yURtbsc1FRr+CjLq0u5AcIn6WbcQO3MPtWa8b6PmLk1zzkBwTcGbfW7pzDl8P+HBjqlAUgMR1bR0cyAEiKMVhrL0NffF/vboS1dxPTAEeeny3FoOaD/qE0ahajv2wflb5/uDubQrzsggoEIGaz4IR71evWf7Lg9kDnm2Ooa0iOhnZoogx/xgoggaN0nGY1jXNyqfGfNdiI0gxSDJKyyJ0FGM4PKtSfOVy/Ru6xTKNKaI8Ytcp7QviTdu8UnFUyV3ojtbjhXySVSLjTnG0ithGtujWlTt4IF2Q==",
         "ssh_username": "ubuntu",
         "ssh_timeout": "10m",
         "ssh_pty": true,
