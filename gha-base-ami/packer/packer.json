@@ -1,7 +1,7 @@
 {
     "variables": {
         "aws_region": "us-east-1",
-        "subnet_id": "subnet-fb8603d5",
+        "subnet_id": "subnet-07bdb7f564a1ed87e",
         "ami_owner_account": "099720109477"
     },
     "builders": [

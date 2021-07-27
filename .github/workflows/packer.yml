@@ -15,18 +15,18 @@ jobs:
         uses: actions/checkout@v2
 
       # fix backwards incompatibilities in template
-      - name: Fix Template
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: fix
-
-      # validate templates
-      - name: Validate Template
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: validate
-          arguments: -syntax-only
-          target: ../gha-base-ami/packer/packer.json
+      #- name: Fix Template
+      #  uses: hashicorp/packer-github-actions@master
+      #  with:
+      #    command: fix
+#
+      ## validate templates
+      #- name: Validate Template
+      #  uses: hashicorp/packer-github-actions@master
+      #  with:
+      #    command: validate
+      #    arguments: -syntax-only
+      #    target: ../gha-base-ami/packer/packer.json
 
       # build artifact
       - name: Build Artifact
