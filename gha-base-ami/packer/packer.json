@@ -2,14 +2,20 @@
     "variables": {
         "aws_region": "us-east-1",
         "subnet_id": "subnet-07bdb7f564a1ed87e",
-        "ami_owner_account": "099720109477"
+        "ami_owner_account": "099720109477",
+        "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+        "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+        "aws_session_token": "{{env `AWS_SESSION_TOKEN`}}"
     },
     "builders": [
       {
         "type": "amazon-ebs",
         "assume_role": {
-          "role_arn"    :  "arn:aws:iam::864343291038:role/bep-custom-runner-ec2-role"
+          "role_arn": "arn:aws:iam::864343291038:role/bep-custom-runner-ec2-role"
         },
+        "access_key": "{{user `aws_access_key`}}",
+        "secret_key": "{{user `aws_secret_key`}}",
+        "token": "{{user `aws_session_token`}}",
         "ami_name": "gha_custom_runner_Base_linux_ami_{{ timestamp }}",
         "ami_description": "Bain GitHub Actions Custom Runner Ubuntu Server 20.04 LTS (HVM),EBS General Purpose (SSD) Volume Type AMI",
         "region": "{{user `aws_region`}}",
