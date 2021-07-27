@@ -42,9 +42,7 @@
         "inline": [
             "sudo apt-add-repository -y ppa:ansible/ansible",
             "sudo apt-get update",
-            "sudo apt-get -y install ansible",
-            "pwd",
-            "echo ################################################"
+            "sudo apt-get -y install ansible"
         ],
         "inline_shebang": "/bin/sh -x"
       }
