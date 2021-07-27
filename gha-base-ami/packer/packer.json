@@ -44,10 +44,6 @@
             "echo ################################################"
         ],
         "inline_shebang": "/bin/sh -x"
-      },
-      {
-        "type": "ansible-local",
-        "playbook_file": "../ansible/playbook.yml"
       }
     ]
   }
