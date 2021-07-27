@@ -46,7 +46,7 @@
       },
       {
         "type": "ansible-local",
-        "playbook_file": "../ansible/playbook.yml"
+        "playbook_file": "/home/runner/work/github-actions-test/github-actions-test/gha-base-ami/ansible/playbook.yml"
       }
     ]
   }
