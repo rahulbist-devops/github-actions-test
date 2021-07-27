@@ -16,7 +16,7 @@ jobs:
       - name: pwd
         run: pwd
       - name: list files
-        run: ls -a /home/runner/work/github-actions-test/github-actions-test/.github/packer-github-actions
+        run: ls -a /home/runner/work/github-actions-test/github-actions-test/.github/packer-gha
       # fix backwards incompatibilities in template
       #- name: Fix Template
       #  uses: hashicorp/packer-github-actions@master
