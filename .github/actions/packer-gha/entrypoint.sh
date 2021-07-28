@@ -7,7 +7,7 @@ if [ -z "${INPUT_COMMAND}" ]; then
   echo "Required variable \`command\` is missing"
   exit 1
 fi
-
+ 
 if [ -n "${INPUT_WORKING_DIRECTORY}" ]; then
   cd "${INPUT_WORKING_DIRECTORY}"
 fi
