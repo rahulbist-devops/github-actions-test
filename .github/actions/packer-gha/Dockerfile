@@ -8,7 +8,7 @@
 #ENTRYPOINT ["/entrypoint.sh"]
 
 
-FROM alpine:latest
+FROM ubuntu:latest
 
 # Env setup
 ENV PACKER_VERSION=1.7.4 \
