@@ -54,10 +54,4 @@ RUN rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 COPY "entrypoint.sh" "/entrypoint.sh"
 COPY "gha-base-ami" "/gha-base-ami"
 
-RUN echo "#################"
-RUN echo $INPUT_WORKING_DIRECTORY
-RUN echo $INPUT_COMMAND
-RUN echo "#################"
-
-
 ENTRYPOINT ["/entrypoint.sh"]
