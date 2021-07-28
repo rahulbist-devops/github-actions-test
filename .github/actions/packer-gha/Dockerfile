@@ -36,8 +36,7 @@
 #
 #ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
 
-FROM docker.mirror.hashicorp.services/alpine:latest
-LABEL maintainer="The Packer Team <packer@hashicorp.com>"
+FROM alpine:latest
 
 ENV PACKER_VERSION=1.7.4
 ENV PACKER_SHA256SUM=3660064a56a174a6da5c37ee6b36107098c6b37e35cc84feb2f7f7519081b1b0
