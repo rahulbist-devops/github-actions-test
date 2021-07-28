@@ -13,12 +13,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: pwd
-        run: pwd
-      - name: list files1
-        run: ls -a /opt/actions-runner/_work/github-actions-test/github-actions-test/gha-base-ami/ansible
-      - name: list files
-        run: ls -a /opt/actions-runner/_work/github-actions-test/github-actions-test/.github/actions/packer-gha
       # fix backwards incompatibilities in template
       #- name: Fix Template
       #  uses: hashicorp/packer-github-actions@master
