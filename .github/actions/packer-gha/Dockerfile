@@ -8,8 +8,9 @@
 #ENTRYPOINT ["/entrypoint.sh"]
 
 
-FROM alpine:latest
+FROM ubuntu:latest
 
+RUN apt-get update -y
 # Env setup
 ENV PACKER_VERSION=1.7.4 \
     PACKER_OSNAME=linux \
@@ -27,4 +28,4 @@ RUN unzip ${PACKER_DEST}/${PACKER_ZIPFILE} -d ${PACKER_DEST} && \
 COPY "entrypoint.sh" "/entrypoint.sh"
 COPY "gha-base-ami" "/gha-base-ami"
 
-ENTRYPOINT ["/bin/sh","/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
