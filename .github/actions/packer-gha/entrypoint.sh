@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
@@ -23,7 +23,7 @@ echo "::debug:: Executing command: ${OPERATION}"
 
 # cast INPUT_TARGET string to "array"
 # shellcheck disable=SC2206
-TARGETS=(${INPUT_TARGET})
+TARGETS=${INPUT_TARGET}
 
 # iterate over target(s)
 for TARGET in "${TARGETS[@]}"; do
