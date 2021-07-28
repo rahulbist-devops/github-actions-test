@@ -7,14 +7,14 @@
 #ENTRYPOINT ["/entrypoint.sh"]
 #
 
-FROM ubuntu:latest
-
-RUN apt-get update && apt-get install -y \
-  unzip \
-  git \
-  bash \
-  wget \
-  openssl
+#FROM ubuntu:latest
+#
+#RUN apt-get update && apt-get install -y \
+#  unzip \
+#  git \
+#  bash \
+#  wget \
+#  openssl
 ## Env setup
 #ENV PACKER_VERSION=1.7.4 \
 #    PACKER_OSNAME=linux \
@@ -36,10 +36,13 @@ RUN apt-get update && apt-get install -y \
 #
 #ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
 
+FROM docker.mirror.hashicorp.services/alpine:latest
+LABEL maintainer="The Packer Team <packer@hashicorp.com>"
+
 ENV PACKER_VERSION=1.7.4
 ENV PACKER_SHA256SUM=3660064a56a174a6da5c37ee6b36107098c6b37e35cc84feb2f7f7519081b1b0
 
-#RUN apk add --update git bash wget openssl
+RUN apk add --update git bash wget openssl
 
 ADD https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip ./
 ADD https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_SHA256SUMS ./
@@ -52,4 +55,4 @@ RUN rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 COPY "entrypoint.sh" "/entrypoint.sh"
 COPY "gha-base-ami" "/gha-base-ami"
 
-ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
