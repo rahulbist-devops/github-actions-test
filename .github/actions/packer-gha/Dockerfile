@@ -1,12 +1,11 @@
-# see https://hub.docker.com/r/hashicorp/packer/tags for all available tags
-#FROM hashicorp/packer:light@sha256:93291f0b3041080b47b065b77309e5c1beee52c6bd691224d21d32e91ec9b562
+#FROM hashicorp/packer:light
 ##FROM ubuntu:latest
 #
 #COPY "entrypoint.sh" "/entrypoint.sh"
 #COPY "gha-base-ami" "/gha-base-ami"
 #
 #ENTRYPOINT ["/entrypoint.sh"]
-
+#
 
 FROM ubuntu:latest
 
@@ -20,7 +19,8 @@ ENV PACKER_VERSION=1.7.4 \
     AWS_REGION=us-east-1
 
 # Packer path setup
-ENV PACKER_ZIPFILE=packer_${PACKER_VERSION}_${PACKER_OSNAME}_${PACKER_OSARCH}.zip
+#ENV PACKER_ZIPFILE=packer_${PACKER_VERSION}_linux_amd64.zip
+ENV PACKER_ZIPFILE=https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip
 
 # Install packer in path
 ADD https://releases.hashicorp.com/packer/${PACKER_VERSION}/${PACKER_ZIPFILE} ${PACKER_DEST}/
