@@ -23,12 +23,12 @@ echo "::debug:: Executing command: ${OPERATION}"
 
 # cast INPUT_TARGET string to "array"
 # shellcheck disable=SC2206
-TARGETS=(${INPUT_TARGET})
-
-# iterate over target(s)
-for TARGET in "${TARGETS[@]}"; do
-  echo "::debug:: Processing target ${TARGET}"
-
-  # shellcheck disable=SC2086
-  ${OPERATION} "${TARGET}"
-done
+#TARGETS=(${INPUT_TARGET})
+#
+## iterate over target(s)
+#for TARGET in "${TARGETS[@]}"; do
+#  echo "::debug:: Processing target ${TARGET}"
+#
+#  # shellcheck disable=SC2086
+#  ${OPERATION} "${TARGET}"
+#done
