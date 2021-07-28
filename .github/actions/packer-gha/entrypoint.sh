@@ -21,6 +21,8 @@ fi
 
 echo "::debug:: Executing command: ${OPERATION}"
 
+${OPERATION} ${INPUT_TARGET}
+
 # cast INPUT_TARGET string to "array"
 # shellcheck disable=SC2206
 #TARGETS=(${INPUT_TARGET})
