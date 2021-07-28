@@ -10,7 +10,8 @@
 
 FROM ubuntu:latest
 
-RUN apt-get update -y
+RUN apt-get update && apt-get install -y \
+  unzip
 # Env setup
 ENV PACKER_VERSION=1.7.4 \
     PACKER_OSNAME=linux \
