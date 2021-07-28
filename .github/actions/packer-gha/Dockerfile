@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y \
 ENV PACKER_VERSION=1.7.4 \
     PACKER_OSNAME=linux \
     PACKER_OSARCH=amd64 \
-    PACKER_DEST=/usr/local/sbin
+    PACKER_DEST=/usr/local/sbin \
+    AWS_REGION=us-east-1
 
 # Packer path setup
 ENV PACKER_ZIPFILE=packer_${PACKER_VERSION}_${PACKER_OSNAME}_${PACKER_OSARCH}.zip
