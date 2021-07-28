@@ -10,7 +10,11 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
-  unzip
+  unzip \
+  git \
+  bash \
+  wget \
+  openssl
 ## Env setup
 #ENV PACKER_VERSION=1.7.4 \
 #    PACKER_OSNAME=linux \
@@ -35,7 +39,7 @@ RUN apt-get update && apt-get install -y \
 ENV PACKER_VERSION=1.7.4
 ENV PACKER_SHA256SUM=3660064a56a174a6da5c37ee6b36107098c6b37e35cc84feb2f7f7519081b1b0
 
-RUN apk add --update git bash wget openssl
+#RUN apk add --update git bash wget openssl
 
 ADD https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip ./
 ADD https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_SHA256SUMS ./
