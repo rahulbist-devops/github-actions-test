@@ -4,8 +4,5 @@ FROM ubuntu:latest
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 COPY "gha-base-ami" "/gha-base-ami"
-RUN "ls"
-RUN "pwd"
-RUN "ls gha-base-ami/"
 
 ENTRYPOINT ["/entrypoint.sh"]
