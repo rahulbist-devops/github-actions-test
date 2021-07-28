@@ -1,6 +1,28 @@
 # see https://hub.docker.com/r/hashicorp/packer/tags for all available tags
-FROM hashicorp/packer:light@sha256:93291f0b3041080b47b065b77309e5c1beee52c6bd691224d21d32e91ec9b562
-#FROM ubuntu:latest
+#FROM hashicorp/packer:light@sha256:93291f0b3041080b47b065b77309e5c1beee52c6bd691224d21d32e91ec9b562
+##FROM ubuntu:latest
+#
+#COPY "entrypoint.sh" "/entrypoint.sh"
+#COPY "gha-base-ami" "/gha-base-ami"
+#
+#ENTRYPOINT ["/entrypoint.sh"]
+
+
+FROM alpine:latest
+
+# Env setup
+ENV PACKER_VERSION=1.7.4 \
+    PACKER_OSNAME=linux \
+    PACKER_OSARCH=amd64 \
+    PACKER_DEST=/usr/local/sbin
+
+# Packer path setup
+ENV PACKER_ZIPFILE=packer_${PACKER_VERSION}_${PACKER_OSNAME}_${PACKER_OSARCH}.zip
+
+# Install packer in path
+ADD https://releases.hashicorp.com/packer/${PACKER_VERSION}/${PACKER_ZIPFILE} ${PACKER_DEST}/
+RUN unzip ${PACKER_DEST}/${PACKER_ZIPFILE} -d ${PACKER_DEST} && \
+    rm -rf ${PACKER_DEST}/${PACKER_ZIPFILE}
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 COPY "gha-base-ami" "/gha-base-ami"
