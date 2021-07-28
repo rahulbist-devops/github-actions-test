@@ -27,4 +27,4 @@ RUN unzip ${PACKER_DEST}/${PACKER_ZIPFILE} -d ${PACKER_DEST} && \
 COPY "entrypoint.sh" "/entrypoint.sh"
 COPY "gha-base-ami" "/gha-base-ami"
 
-ENTRYPOINT ["/bin/bash /entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","/entrypoint.sh"]
