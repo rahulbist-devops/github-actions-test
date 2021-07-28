@@ -1,6 +1,0 @@
----
-- hosts: all
-  gather_facts: true
-  become: yes
-  roles:
-    - { role: roles/gha-self-hosted-runner }
